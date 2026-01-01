@@ -11,7 +11,7 @@ def test_imports():
     # OpenCV
     try:
         import cv2
-        print(f"OK OpenCV: {cv2.__version__}")
+        print(f"OK OpenCV: {cv.__version__}")
     except ImportError as e:
         print(f"ERROR OpenCV: {e}")
 
