@@ -63,3 +63,7 @@ class FaceTracker:
             cv.putText(frame, str(index), (x + 6, y - 6), cv.FONT_HERSHEY_SIMPLEX, 0.4, color, 1) # Draw index near dot
 
         return frame
+    
+    def __del__(self):
+        if hasattr(self, 'mp_face_mesh'):
+            self.mp_face_mesh.close()
