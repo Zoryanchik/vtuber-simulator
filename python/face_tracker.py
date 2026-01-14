@@ -7,12 +7,10 @@ import cv2 as cv
 from config import Config
 
 class FaceTracker:
-    print("All good rn ") 
-
     def __init__(self):
-
+        print("All good rn ") 
         # Mediapipe face mesh initialization
-        self.mp_face_mesh = mp.solutions.face_mesh(
+        self.face_mesh = mp.solutions.face_mesh.FaceMesh(
         # Settings from config.py, we initialize them here, you can change them in config.py
             max_num_faces = Config.MaxNumFaces,
             refine_landmarks = Config.REFINE_LANDMARKS,
@@ -20,19 +18,17 @@ class FaceTracker:
             min_tracking_confidence = Config.MinTrackingConfidence
      )
         
-    print("All initalized well")
 
     def get_face_landmarks(self, frame):
 
         rgb_frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB) # Convert BGR to RGB, because mediapipe uses RGB and OpenCV uses BGR
-        results = self.mp_face_mesh.process(rgb_frame) # Process the frame and get the face landmarks(dots)
+        results = self.face_mesh.process(rgb_frame) # Process the frame and get the face landmarks(dots)
 
         if results.multi_face_landmarks: # If we have found face
-            return results.multi_face_landmarks[0] # Return the first face found
+            return results.multi_face_landmarks[0].landmark # Return the first face found
         else:
             return None
         
-    print("Face landmarks obtained")
 
     def show_landmarks(self, frame, landmarks):
         #The actual viuralization of the dots on the face
@@ -65,5 +61,5 @@ class FaceTracker:
         return frame
     
     def __del__(self):
-        if hasattr(self, 'mp_face_mesh'):
-            self.mp_face_mesh.close()
+        if hasattr(self, 'face_mesh'):
+            self.face_mesh.close()
