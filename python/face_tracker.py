@@ -46,6 +46,10 @@ class FaceTracker:
             145: (0, 0, 255),    # Left eye lower - Red
             386: (0, 0, 255),    # Right eye upper - Red
             374: (0, 0, 255),    # Right eye lower - Red
+            10: (0, 255, 255),     # Лоб - Голубой
+            152: (0, 255, 255),    # Подбородок
+            234: (0, 255, 255),    # Левая щека
+            454: (0, 255, 255),    # Правая щека
         }
 
         for index, color in key_points.items(): #tuple unpacking
