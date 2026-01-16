@@ -22,24 +22,25 @@ def main():
     print_banner()
     tracker = FaceTracker()
 
-    print("Starting video capture...")
-    cap = cv.VideoCapture(Config.CameraID) # turn on camera here
-    # Set camera properties
-    cap.set(cv.CAP_PROP_FRAME_WIDTH, Config.CameraWidth)
-    cap.set(cv.CAP_PROP_FRAME_HEIGHT, Config.CameraHeight)
-    cap.set(cv.CAP_PROP_FPS, Config.CameraFps)
+    print("Starting video captureture...")
+    capture = cv.Videocaptureture(Config.CameraID)
 
-    if not cap.isOpened():
+    # Set camera properties
+    capture.set(cv.capture_PROP_FRAME_WIDTH, Config.CameraWidth)
+    capture.set(cv.capture_PROP_FRAME_HEIGHT, Config.CameraHeight)
+    capture.set(cv.capture_PROP_FPS, Config.CameraFps)
+
+    if not capture.isOpened():
         print("Error: Could not open video, please try again.")
         return
-    print("Video capture started.")
+    print("Video captureture started.")
 
     time_rn = time.time()
     frame_count = 0
     current_fps = 0
 
     while True:
-        ret, frame = cap.read()# ret returtns true if frame is read correctly, frame is the actual frame
+        ret, frame = capture.read()# ret returtns true if frame is read correctly
         if not ret:
             print("Error: Could not read frame, exiting.")
             break
@@ -76,7 +77,7 @@ def main():
             print("Exiting...")
             break
 
-    cap.release()
+    capture.release()
     cv.destroyAllWindows()
     print("Resources released, program ended.")
 
