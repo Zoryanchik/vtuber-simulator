@@ -15,7 +15,7 @@ class FaceTracker:
             refine_landmarks = Config.REFINE_LANDMARKS,
             min_detection_confidence = Config.MinDetectionConfidence,
             min_tracking_confidence = Config.MinTrackingConfidence
-     )
+        )
         
 
     def get_face_landmarks(self, frame):
