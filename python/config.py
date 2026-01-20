@@ -11,7 +11,7 @@ class Config: #Same as in java or c#, we talk through Config.smthing
     CameraWidth = 640
     CameraHeight = 480
     #I use 640x480 resolution for my camera bc it is faster but you can try and do 1280x720 or 1920x1080
-    CameraFps = 30
+    CameraFps = 60
     #Most 0f cameras use 30/60 fps
 
     #Mediapipe settings
