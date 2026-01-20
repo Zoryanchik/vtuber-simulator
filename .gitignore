@@ -274,3 +274,9 @@ Thumbs.db
 
 # VRM Model Files (large binary files)
 *.vrm
+*.vrm.meta
+
+# VRM Packages and Models (Unity packages - reinstall via Package Manager)
+Unity/**/Packages/com.vrmc.gltf/
+Unity/**/Packages/com.vrmc.vrm/
+Unity/**/Assets/Models/
