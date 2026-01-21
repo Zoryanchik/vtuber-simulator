@@ -42,7 +42,7 @@ class NetworkSender:
             print(f"Error sending face data: {e}")
             self.connected = False
 
-    def get_sttats(self):
+    def get_stats(self):
         return {
             'packets_sent': self.packet_sent,
             'connected': self.connected,
@@ -78,10 +78,9 @@ if __name__ == "__main__":
             print(f"  Packet {i+1} sent")
             time.sleep(0.1)  # Send data every 100 ms
 
-        stats = sender.get_sttats()
+        stats = sender.get_stats()
         print(f"  Packets sent: {stats['packets_sent']}")
         print(f"  Target: {stats['target_ip']}:{stats['target_port']}")
         print("\nTest complete!")
     else:
         print("\nSender not connected")
-        
