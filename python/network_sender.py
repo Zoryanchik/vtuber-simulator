@@ -41,3 +41,47 @@ class NetworkSender:
         except Exception as e:
             print(f"Error sending face data: {e}")
             self.connected = False
+
+    def get_sttats(self):
+        return {
+            'packets_sent': self.packet_sent,
+            'connected': self.connected,
+            'target_ip': Config.UnityIp,
+            'target_port': Config.UnityPort         
+        }
+    
+    def reconnect(self):
+        try:
+            self.client = udp_client.SimpleUDPClient(Config.UnityIp, Config.UnityPort)
+            self.connected = True
+            print("Reconnected to Unity.")
+        except Exception as e:
+            print(f"Reconnection failed: {e}")
+            self.connected = False
+
+if __name__ == "__main__":
+    print("Testing NetworkSender...")
+    sender = NetworkSender()
+
+    if sender.connected:
+        print("Sending test data...")
+        test_data = {
+            'mouth_open': 0.5,
+            'eye_left': 0.2,
+            'eye_right': 0.3,
+            'head_x': 0.1,
+            'head_y': -0.1
+        }
+
+        for i in range(10):
+            sender.send_face_data(test_data)
+            print(f"  Packet {i+1} sent")
+            time.sleep(0.1)  # Send data every 100 ms
+
+        stats = sender.get_sttats()
+        print(f"  Packets sent: {stats['packets_sent']}")
+        print(f"  Target: {stats['target_ip']}:{stats['target_port']}")
+        print("\nTest complete!")
+    else:
+        print("\nSender not connected")
+        

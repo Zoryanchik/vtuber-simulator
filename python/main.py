@@ -3,7 +3,7 @@ import time
 from face_tracker import FaceTracker
 from config import Config
 from data_processor import DataProcessor
-
+from network_sender import NetworkSender
 
 def print_banner():
     print("""
@@ -23,6 +23,7 @@ def main():
     print_banner()
     tracker = FaceTracker()
     processor = DataProcessor()
+    sender = NetworkSender()
 
     print("Starting video capture...")
     capture = cv.VideoCapture(Config.CameraID)
@@ -56,7 +57,7 @@ def main():
 
             raw_data = processor.extract_features(landmarks)
             smooth_data = processor.smooth_data(raw_data)
-
+            sender.send_face_data(smooth_data)
             if Config.Show_Dots:
                 frame = tracker.show_landmarks(frame, landmarks)
             cv.putText(frame, "FACE DETECTED", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 1)

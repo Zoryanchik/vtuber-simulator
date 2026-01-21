@@ -29,8 +29,8 @@ class Config: #Same as in java or c#, we talk through Config.smthing
     EYE_MULTIPLIER = 4.0
 
     #Unity settings
-    UnityPort = 0 # ur unity port here
-    UnityIp = "" #Ur ip adress here
+    UnityPort = 5005 # ur unity port here
+    UnityIp = "127.0.0.1" #Ur ip adress here
 
     #Debug settings
     Show_Dots = True
