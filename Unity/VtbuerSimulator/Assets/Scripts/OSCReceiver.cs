@@ -96,5 +96,31 @@ public class OSCReceiver : MonoBehaviour
         return BitConverter.ToSingle(floatBytes, 0);
     }
 
+    void OnApplicationQuit()
+    {
+        isRunning = false;
 
+        if (receiveThread != null && receiveThread.IsAlive)
+        {
+            receiveThread.Abort();
+        }
+
+        if (udpClient != null)
+        {
+            udpClient.Close();
+        }
+
+        Debug.Log("OSC Receiver stopped");
+    }
+
+    void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(10, 10, 250, 200));
+        GUILayout.Label($"Mouth: {mouthOpen:F2}");
+        GUILayout.Label($"Eye L: {eyeLeft:F2}");
+        GUILayout.Label($"Eye R: {eyeRight:F2}");
+        GUILayout.Label($"Head X: {headX:F2}");
+        GUILayout.Label($"Head Y: {headY:F2}");
+        GUILayout.EndArea();
+    }
 }
