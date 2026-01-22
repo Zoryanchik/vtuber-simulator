@@ -8,13 +8,14 @@ class DataProcessor:
         
         print("Starting Data Initialization...")
 
-        self.mouth_history = deque(maxlen=Config.SMOOTHING)
-        #we save only 5 last values for smoothing
-        #A deque stands for Double-Ended Queue. It is a special type of data structure that allows you to add and remove elements from both ends efficiently
-        self.eye_left_history = deque(maxlen=Config.SMOOTHING)
-        self.eye_right_history = deque(maxlen=Config.SMOOTHING)
-        self.head_x_history = deque(maxlen=Config.SMOOTHING)
-        self.head_y_history = deque(maxlen=Config.SMOOTHING)
+        smooth_frames = max(1, int(1.0 / Config.SMOOTHING))
+        #Redone smoothing with deque for better performance
+        self.mouth_history = deque(maxlen=smooth_frames)
+        self.eye_left_history = deque(maxlen=smooth_frames)
+        self.eye_right_history = deque(maxlen=smooth_frames)
+        self.head_x_history = deque(maxlen=smooth_frames)
+        self.head_y_history = deque(maxlen=smooth_frames)
+        
         print("Data Initialization Complete.")
 
     def extract_features(self, landmarks):
