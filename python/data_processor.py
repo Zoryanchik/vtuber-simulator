@@ -27,11 +27,11 @@ class DataProcessor:
         mouth_open = np.clip(mouth_open, 0.0, 1.0) # Clip value between 0 and 1 so close and open
         #Left eye blink
         eye_left_raw = abs(landmarks[159].y - landmarks[145].y)
-        eye_left = eye_left_raw * Config.EYE_MULTIPLIER
+        eye_left = 1.0 - (eye_left_raw * Config.EYE_MULTIPLIER)
         eye_left = np.clip(eye_left, 0.0, 1.0)
         #Rihqt eye blink
         eye_right_raw = abs(landmarks[386].y - landmarks[374].y)
-        eye_right = eye_right_raw * Config.EYE_MULTIPLIER
+        eye_right = 1.0 - (eye_right_raw * Config.EYE_MULTIPLIER)
         eye_right = np.clip(eye_right, 0.0, 1.0)
 
         #Head movement 
