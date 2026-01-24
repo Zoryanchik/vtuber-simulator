@@ -420,6 +420,7 @@ MonoBehaviour:
   eyeRight: 1
   headX: 0
   headY: 0
+  happy: 0
 --- !u!4 &540602524
 Transform:
   m_ObjectHideFlags: 0
@@ -452,8 +453,10 @@ MonoBehaviour:
   mouthBlendShapeName: Fcl_MTH_Joy
   blinkLeftBlendShapeName: Fcl_EYE_Joy_L
   blinkRightBlendShapeName: Fcl_EYE_Joy_R
+  happyBlendShapeName: Fcl_MTH_Fun
   mouthMultiplier: 200
   eyeMultiplier: 75
+  emotionMultiplier: 100
   showDebugInfo: 1
 --- !u!114 &540602526
 MonoBehaviour:

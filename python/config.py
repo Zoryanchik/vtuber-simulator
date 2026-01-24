@@ -26,7 +26,8 @@ class Config: #Same as in java or c#, we talk through Config.smthing
     #MAkje number bigger for more exagerated movement or less for more subtle movement
     SMOOTHING = 1
     MOUTH_MULTIPLIER = 4.0
-    EYE_MULTIPLIER = 25
+    EYE_MULTIPLIER = 50
+    HAPPY_MULTIPLIER = 50
 
     #Unity settings
     UnityPort = 5005 # ur unity port here

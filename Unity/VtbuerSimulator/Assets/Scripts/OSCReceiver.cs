@@ -17,6 +17,7 @@ public class OSCReceiver : MonoBehaviour
     public float eyeRight = 1f;
     public float headX = 0f;
     public float headY = 0f;
+    public float happy = 0f;
 
     private UdpClient udpClient;
     private Thread receiveThread;
@@ -78,6 +79,10 @@ public class OSCReceiver : MonoBehaviour
         {
             headY = value;
         }
+        else if (message.Contains("/face/happy"))
+        {
+            happy = value;
+        }
     }
 
     float ExtractFloat(byte[] data)
@@ -115,12 +120,13 @@ public class OSCReceiver : MonoBehaviour
 
     void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(10, 10, 250, 200));
+        GUILayout.BeginArea(new Rect(10, 10, 250, 230));
         GUILayout.Label($"Mouth: {mouthOpen:F2}");
         GUILayout.Label($"Eye L: {eyeLeft:F2}");
         GUILayout.Label($"Eye R: {eyeRight:F2}");
         GUILayout.Label($"Head X: {headX:F2}");
         GUILayout.Label($"Head Y: {headY:F2}");
+        GUILayout.Label($"Happy: {happy:F2}");
         GUILayout.EndArea();
     }
 }

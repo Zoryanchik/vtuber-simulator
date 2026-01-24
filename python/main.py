@@ -78,6 +78,9 @@ def main():
                 y_pos += 30
                 cv.putText(frame, f"Head Y: {smooth_data['head_y']:.2f}", 
                           (10, y_pos), cv.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+                y_pos += 30
+                cv.putText(frame, f"Happy: {smooth_data['happy']:.2f}", 
+                          (10, y_pos), cv.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
       
       
         else:

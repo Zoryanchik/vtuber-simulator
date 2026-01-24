@@ -35,6 +35,7 @@ class NetworkSender:
 
             self.client.send_message("/face/head_x", float(data['head_x']))
             self.client.send_message("/face/head_y", float(data['head_y']))
+            self.client.send_message("/face/happy", float(data['happy']))
 
             self.packet_sent += 1
             self.last_send_time = current_time
