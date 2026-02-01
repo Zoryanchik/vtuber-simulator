@@ -9,7 +9,7 @@ Show Image
 <br />
 <div align="center">
   <a href="https://github.com/Zoryanchik/vtuber-simulator">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.gif" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">VTuber Simulator</h3>
   <p align="center">
@@ -53,7 +53,7 @@ Show Image
 <!-- ABOUT THE PROJECT -->
 About The Project
 Show Image
-Ever wanted to create your own virtual YouTuber? This project brings together the best of Unity's 3D rendering and Python's AI capabilities to make an interactive VTuber that actually feels alive. Chat with it, watch it react in real-time, and customize it however you want.
+Ever wanted to create your own virtual YouTuber? This project brings together the best of Unity's 3D rendering and Python's AI capabilities to make an interactive VTuber that actually feels alive.[...]
 Here's why this project is cool:
 
 Your VTuber responds naturally using AI - no scripted responses
@@ -134,7 +134,6 @@ Watch your character respond with animations
 Try different conversation topics to see various reactions
 
 
-
 Examples
 Basic conversation:
 You: Hey, how are you doing?
@@ -166,7 +165,6 @@ Roadmap
  Japanese
  Spanish
  Korean
-
 
 
 See the open issues for a full list of proposed features (and known issues).
