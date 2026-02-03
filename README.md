@@ -52,7 +52,9 @@ Show Image
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Show Image
+<div align="center">
+  <img src="images/gif.gif" alt="VTuber Simulator Demo" width="600">
+</div>
 
 Have you ever wanted to create your own virtual YouTuber?  But struggled to find software that would give you full control over your model? If so, hopefully this project is what you've been looking for!
 
