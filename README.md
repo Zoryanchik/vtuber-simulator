@@ -193,8 +193,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - @your_twitter - your.email@example.com
-
+My linkedin: https://www.linkedin.com/in/zorian-mart-440b88333/
 Project Link: [https://github.com/Zoryanchik/vtuber-simulator](https://github.com/Zoryanchik/vtuber-simulator)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
