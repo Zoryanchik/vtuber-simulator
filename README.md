@@ -43,7 +43,6 @@ Show Image
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -55,12 +54,11 @@ Show Image
 
 Show Image
 
-Ever wanted to create your own virtual YouTuber? This project brings together the best of Unity's 3D rendering and Python's AI capabilities to make an interactive VTuber that actually feels alive.
+Have you ever wanted to create your own virtual YouTuber?  But struggled to find software that would give you full control over your model? If so, hopefully this project is what you've been looking for!
 
 Here's why this project is cool:
 
-* Your VTuber responds naturally using AI - no scripted responses
-* Beautiful 3D animations that sync with conversations
+* Your VTuber responds naturally using Python libraries - no scripted responses
 * Built with modern, modular architecture so you can easily extend it
 * Perfect for learning about Unity-Python integration or building your own streaming companion
 
@@ -150,47 +148,14 @@ You should see output indicating the server is running.
 
 3. Interact with your VTuber:
 
-   * Type messages in the chat interface
+   * Try moving your head or showing some emotion
    * Watch your character respond with animations
-   * Try different conversation topics to see various reactions
-
-### Examples
-
-Basic conversation:
-```
-You: Hey, how are you doing?
-VTuber: *waves* I'm doing great! Thanks for chatting with me!
-```
-
-Customizing the character:
-```csharp
-// In Unity, modify character settings
-CharacterController.SetEmotion(Emotion.Happy);
-CharacterController.PlayAnimation("Wave");
-```
 
 For more examples and advanced usage, please refer to the [Documentation](https://github.com/Zoryanchik/vtuber-simulator)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
-## Roadmap
 
-- [x] Basic 3D character rendering
-- [x] AI chat integration
-- [x] Real-time animation sync
-- [ ] Voice synthesis
-- [ ] Advanced facial expressions
-  - [ ] Eye tracking
-  - [ ] Lip sync
-
-- [ ] Hand gesture recognition
-- [ ] Character customization UI
-- [ ] Streaming platform integration (Twitch, YouTube)
-- [ ] Multi-language support
-  - [ ] Japanese
-  - [ ] Spanish
-  - [ ] Korean
 
 See the [open issues](https://github.com/Zoryanchik/vtuber-simulator/issues) for a full list of proposed features (and known issues).
 
